@@ -5,14 +5,22 @@ import SearchForm from "@/features/search-city/SearchForm";
 import Loader from "@/shared/ui/Loader/Loader";
 import ErrorMessage from "@/shared/ui/ErrorMessage/ErrorMessage";
 
+interface WeatherData {
+  name: string;
+  main: {
+    temp: number;
+  };
+  weather: Array<{
+    description: string;
+  }>;
+}
+
 const HomePage = () => {
-  const [city, setCity] = useState("");
-  const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [data, setData] = useState<WeatherData | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
 
   const handleSearch = async (searchCity: string) => {
-    setCity(searchCity);
     setLoading(true);
     setError("");
     setData(null);
@@ -20,7 +28,7 @@ const HomePage = () => {
     try {
       const res = await weatherApi.getCurrentWeather(searchCity);
       setData(res.data);
-    } catch (err: any) {
+    } catch {
       setError("Не удалось загрузить данные. Проверьте название города.");
     } finally {
       setLoading(false);

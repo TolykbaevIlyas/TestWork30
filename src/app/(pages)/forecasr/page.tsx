@@ -4,9 +4,23 @@ import { WeatherCard } from "@/entities/weather/ui/WeatherCard";
 import Loader from "@/shared/ui/Loader/Loader";
 import ErrorMessage from "@/shared/ui/ErrorMessage/ErrorMessage";
 
+interface ForecastData {
+  list: Array<{
+    main: {
+      temp: number;
+    };
+    weather: Array<{
+      description: string;
+    }>;
+  }>;
+  city: {
+    name: string;
+  };
+}
+
 const ForecastPage = () => {
   const [city, setCity] = useState("");
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<ForecastData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -19,7 +33,7 @@ const ForecastPage = () => {
     try {
       const res = await weatherApi.getForecast(searchCity);
       setData(res.data);
-    } catch (err: any) {
+    } catch {
       setError("Не удалось загрузить данные. Проверьте название города.");
     } finally {
       setLoading(false);
@@ -47,7 +61,7 @@ const ForecastPage = () => {
 
       {data && (
         <div className="row">
-          {data.list.slice(0, 5).map((forecast: any, index: number) => (
+          {data.list.slice(0, 5).map((forecast, index) => (
             <div key={index} className="col-md-2 mb-4">
               <WeatherCard
                 city={data.city.name}
