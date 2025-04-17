@@ -7,8 +7,20 @@ const instance = axios.create({ baseURL: baseUrl });
 
 export const weatherApi = {
   getCurrentWeather: (city: string) =>
-    instance.get(`/weather?q=${city}&appid=${apiKey}&units=metric`),
+    instance.get(`/weather`, {
+      params: {
+        q: city,
+        appid: apiKey,
+        units: "metric"
+      }
+    }),
 
   getForecast: (city: string) =>
-    instance.get(`/forecast?q=${city}&appid=${apiKey}&units=metric`)
+    instance.get(`/forecast`, {
+      params: {
+        q: city,
+        appid: apiKey,
+        units: "metric"
+      }
+    })
 };

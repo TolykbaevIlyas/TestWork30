@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import { weatherApi } from "@/shared/api/weatherApi";
 import { WeatherCard } from "@/entities/weather/ui/WeatherCard";

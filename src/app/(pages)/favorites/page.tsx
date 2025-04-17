@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { useWeatherStore } from "@/shared/model/weatherStore";
 import { WeatherCard } from "@/entities/weather/ui/WeatherCard";
