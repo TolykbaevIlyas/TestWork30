@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "~bootstrap/scss/bootstrap";
 
 :root {
   --background: #ffffff;
