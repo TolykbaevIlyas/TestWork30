@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './Search.module.scss';
 
 type Props = {
   onSearch: (city: string) => void;
@@ -16,15 +17,14 @@ const SearchForm: React.FC<Props> = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mb-3">
-      <input
-        type="text"
-        className="form-control"
-        placeholder="Введите город"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-      />
-    </form>
+    <form onSubmit={handleSubmit} className={styles.form}>
+    <input
+      type="text"
+      placeholder="Введите город"
+      value={city}
+      onChange={(e) => setCity(e.target.value)}
+    />
+  </form>
   );
 };
 

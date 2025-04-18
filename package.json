@@ -11,11 +11,15 @@
   "dependencies": {
     "axios": "^1.8.4",
     "bootstrap": "^5.3.5",
+    "lottie-react": "^2.4.1",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-spinners": "^0.16.1",
+    "recharts": "^2.15.3",
     "sass": "^1.86.3",
     "stylelint": "^16.18.0",
+    "swiper": "^11.2.6",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

@@ -1,0 +1,26 @@
+.button {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.active {
+  background-color: #ffcccb; // Цвет кнопки, когда город в избранном
+  border-color: #ff4d4d;
+  color: #000;
+}
+
+.inactive {
+  background-color: #f0f0f0; // Цвет кнопки, когда город не в избранном
+  border-color: #ccc;
+  color: #000;
+}

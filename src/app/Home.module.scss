@@ -1,0 +1,20 @@
+.container {
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.favLink {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #007bff;
+  font-size: 1.1rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

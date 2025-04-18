@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  color: black;
+
+  input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+
+    &:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+    }
+  }
+}
